@@ -1,0 +1,141 @@
+/* Rotary Color Palette */
+:root {
+  --rotary-blue: #0047AB;
+  --rotary-gold: #F7A800;
+  --white: #ffffff;
+  --light-gray: #f5f5f5;
+  --dark-text: #1a1a1a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--dark-text);
+  line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+  background: var(--rotary-blue);
+  color: var(--white);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.navbar nav a {
+  color: var(--white);
+  margin-left: 1.2rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar nav a:hover {
+  text-decoration: underline;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(
+    rgba(0, 71, 171, 0.85),
+    rgba(0, 71, 171, 0.85)
+  );
+  color: var(--white);
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* BUTTONS */
+.btn {
+  padding: 0.8rem 1.6rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn.primary {
+  background: var(--rotary-gold);
+  color: var(--dark-text);
+}
+
+.btn.secondary {
+  border: 2px solid var(--white);
+  color: var(--white);
+}
+
+/* SECTIONS */
+.section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.section.alt {
+  background: var(--light-gray);
+}
+
+.section h2 {
+  color: var(--rotary-blue);
+  margin-bottom: 1rem;
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat h3 {
+  color: var(--rotary-gold);
+  font-size: 2rem;
+}
+
+/* CTA */
+.cta {
+  background: var(--rotary-blue);
+  color: var(--white);
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.cta h2 {
+  margin-bottom: 1rem;
+}
+
+/* FOOTER */
+.footer {
+  background: #002f6c;
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
