@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      root.classList.add('js');
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      root.classList.add('intro-pending');
+      let finished = false;
+      const finishIntro = () => {
+        if (finished) return;
+        finished = true;
+        root.classList.remove('intro-pending');
+        document.querySelectorAll('body > :not(.site-intro)').forEach(node => { node.inert = false; });
+        document.querySelector('.site-intro')?.remove();
+      };
+      document.addEventListener('DOMContentLoaded', () => {
+        if (root.classList.contains('intro-pending')) {
+          document.querySelectorAll('body > :not(.site-intro)').forEach(node => { node.inert = true; });
+          document.querySelector('.intro-skip')?.focus({ preventScroll: true });
+        }
+      }, { once: true });
+      document.addEventListener('click', event => { if (event.target.closest('.intro-skip')) finishIntro(); }, true);
+      document.addEventListener('keydown', event => { if (event.key === 'Escape' && root.classList.contains('intro-pending')) finishIntro(); });
+      document.addEventListener('animationend', event => { if (event.animationName === 'schings-intro-left') finishIntro(); });
+      window.setTimeout(finishIntro, 2200);
+    })();
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2eee6">
+  <meta name="robots" content="noindex, follow">
+  <meta name="description" content="The page you are looking for could not be found. Return to Schings Digital and explore photography, design and media work.">
+  <title>Page not found — Schings Digital</title>
+  <link rel="icon" href="assets/images/mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script defer src="assets/js/site.js"></script>
+</head>
+<body>
+  <div class="site-intro" role="dialog" aria-modal="true" aria-label="Schings Digital introduction">
+    <div class="intro-panel intro-panel-left" aria-hidden="true"></div>
+    <div class="intro-panel intro-panel-right" aria-hidden="true"></div>
+    <div class="intro-lockup"><span class="intro-symbol" aria-hidden="true">S<span>+</span></span><span class="intro-wordmark">SCHINGS<span>DIGITAL</span></span></div>
+    <span class="intro-divider" aria-hidden="true"></span>
+    <button class="intro-skip" type="button">Skip intro</button>
+  </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Schings Digital home"><span class="brand-symbol" aria-hidden="true">S<span>+</span></span><span class="brand-wordmark">SCHINGS<span>DIGITAL</span></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><span>Menu</span><i aria-hidden="true"></i></button>
+    <nav class="primary-navigation" id="primary-navigation" aria-label="Primary navigation"><a href="studio.html">Studio</a><a href="services.html">Services</a><a href="work.html">Work</a><a class="nav-cta" href="contact.html">Request a quote <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></nav>
+  </header>
+  <main id="main">
+    <section class="not-found page-shell" aria-labelledby="not-found-title">
+      <div class="not-found-art" aria-hidden="true"><span>4</span><span class="not-found-zero">0<i></i></span><span>4</span><b>SD / LOST FRAME</b></div>
+      <div class="not-found-copy">
+        <div class="section-kicker"><span>404</span><span>Out of frame</span></div>
+        <h1 id="not-found-title">This page<br>isn’t in the <em>frame.</em></h1>
+        <p>The link may be old, or the page may have moved. Let’s get you back to something worth seeing.</p>
+        <div class="hero-actions"><a class="button button-dark" href="index.html">Back to home <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a><a class="quiet-link" href="work.html">Explore the work <svg class="icon-arrow icon-down" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5"/></svg></a></div>
+      </div>
+    </section>
+    <section class="not-found-foot page-shell"><span>Schings Digital</span><span>Made to be seen.</span></section>
+  </main>
+  <footer class="site-footer page-shell"><a class="footer-brand" href="index.html">SCHINGS<span>DIGITAL</span></a><p>Independent media brand by Samuel Takudzwa Chingosho.</p><nav aria-label="Footer navigation"><a href="studio.html">Studio</a><a href="services.html">Services</a><a href="work.html">Work</a><a href="contact.html">Contact</a></nav><div class="footer-social"><a href="https://www.instagram.com/schingsdigital" target="_blank" rel="noreferrer">Instagram</a><a href="https://x.com/schingsdigital" target="_blank" rel="noreferrer">X</a><a href="https://www.facebook.com/people/Sammychings27-Digital/61591467394198/" target="_blank" rel="noreferrer">Facebook</a></div><span class="footer-year">© <span data-year></span> Schings Digital</span></footer>
+</body>
+</html>

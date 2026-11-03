@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en-GB"><head><script>
+(() => {
+  const root = document.documentElement;
+  root.classList.add('js');
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  root.classList.add('intro-pending');
+  let finished = false;
+  const finishIntro = () => {
+    if (finished) return;
+    finished = true;
+    root.classList.remove('intro-pending');
+    document.querySelectorAll('body > :not(.site-intro)').forEach(node => { node.inert = false; });
+    document.querySelector('.site-intro')?.remove();
+  };
+  document.addEventListener('DOMContentLoaded', () => {
+    if (root.classList.contains('intro-pending')) {
+      document.querySelectorAll('body > :not(.site-intro)').forEach(node => { node.inert = true; });
+      document.querySelector('.intro-skip')?.focus({ preventScroll: true });
+    }
+  }, { once: true });
+  document.addEventListener('click', event => {
+    if (event.target.closest('.intro-skip')) finishIntro();
+  }, true);
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && root.classList.contains('intro-pending')) finishIntro();
+  });
+  document.addEventListener('animationend', event => {
+    if (event.animationName === 'schings-intro-left') finishIntro();
+  });
+  window.setTimeout(finishIntro, 2200);
+})();
+</script><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f2eee6"><meta name="description" content="Explore portrait photography, digital flyers, video, social marketing and PA operation from Schings Digital. Custom quotes for projects in Zimbabwe and Gauteng."><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Photography, Video &amp; Media Services — Schings Digital"><meta name="twitter:description" content="Explore portrait photography, digital flyers, video, social marketing and PA operation from Schings Digital. Custom quotes for projects in Zimbabwe and Gauteng."><meta name="twitter:image" content="https://sammychings27.xyz/assets/images/portfolio/samuel-portrait.jpg"><meta property="og:url" content="https://sammychings27.xyz/services.html"><meta property="og:image" content="https://sammychings27.xyz/assets/images/portfolio/samuel-portrait.jpg"><link rel="canonical" href="https://sammychings27.xyz/services.html"><meta property="og:title" content="Photography, Video &amp; Media Services — Schings Digital"><meta property="og:description" content="Explore portrait photography, digital flyers, video, social marketing and PA operation from Schings Digital. Custom quotes for projects in Zimbabwe and Gauteng."><title>Photography, Video &amp; Media Services — Schings Digital</title><link rel="icon" href="assets/images/mark.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/site.css"><script defer src="assets/js/site.js"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Samuel Takudzwa Chingosho","alternateName":"Sammychings27","jobTitle":"Photographer and Media Creator","url":"https://sammychings27.xyz/","sameAs":["https://www.instagram.com/schingsdigital","https://x.com/schingsdigital","https://www.facebook.com/people/Sammychings27-Digital/61591467394198/"]}</script></head>
+<body><div class="site-intro" role="dialog" aria-modal="true" aria-label="Schings Digital introduction">
+  <div class="intro-panel intro-panel-left" aria-hidden="true"></div>
+  <div class="intro-panel intro-panel-right" aria-hidden="true"></div>
+  <div class="intro-lockup"><span class="intro-symbol" aria-hidden="true">S<span>+</span></span><span class="intro-wordmark">SCHINGS<span>DIGITAL</span></span></div>
+  <span class="intro-divider" aria-hidden="true"></span>
+  <button class="intro-skip" type="button">Skip intro</button>
+</div><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html" aria-label="Schings Digital home"><span class="brand-symbol" aria-hidden="true">S<span>+</span></span><span class="brand-wordmark">SCHINGS<span>DIGITAL</span></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><span>Menu</span><i aria-hidden="true"></i></button><nav class="primary-navigation" id="primary-navigation" aria-label="Primary navigation"><a href="studio.html">Studio</a><a href="services.html" aria-current="page">Services</a><a href="work.html">Work</a><a class="nav-cta" href="contact.html">Request a quote <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></nav></header>
+<main id="main"><section class="inner-hero page-shell"><div class="section-kicker"><span>Services</span><span>Made around your brief</span></div><div class="inner-hero-grid"><h1>Good work<br>starts with a <em>clear idea.</em></h1><p>Tell me what you want to make, who it is for and what it needs to do. I’ll shape a custom quote around the project.</p></div></section>
+<section class="offerings page-shell" aria-label="Current services">
+<article class="offering" id="photography"><span class="offering-num">01 / Capture</span><div><h2>Photography</h2><p>Portrait sessions are the main focus, with coverage for small events such as parties and baby showers.</p><ul><li>Portrait photography</li><li>Small event photography</li><li>Edited digital images</li><li>Prints available on request</li></ul></div><a class="text-arrow" href="contact.html?interest=Photography">Request a quote <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></article>
+<article class="offering" id="flyers"><span class="offering-num">02 / Design</span><div><h2>Digital flyers</h2><p>Promotional design for events, businesses, products and offers, prepared for digital sharing or print.</p><ul><li>Social-ready image files</li><li>Print-ready files</li><li>Event, business and product promotions</li></ul></div><a class="text-arrow" href="contact.html?interest=Digital%20flyer">Request a quote <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></article>
+<article class="offering" id="video"><span class="offering-num">03 / Motion</span><div><h2>Video</h2><p>Filming and editing that turns a moment or message into a video people can watch and share.</p><ul><li>Event highlights</li><li>Social media reels</li><li>Promotional videos</li><li>Filming and editing</li></ul></div><a class="text-arrow" href="contact.html?interest=Video">Request a quote <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></article>
+<article class="offering" id="social"><span class="offering-num">04 / Reach</span><div><h2>Social marketing</h2><p>Practical support for social media, shaped for the client’s channels and goals.</p><ul><li>Social content creation</li><li>Page and account management</li><li>Paid social advertising</li><li>Work across social platforms</li></ul></div><a class="text-arrow" href="contact.html?interest=Social%20marketing">Request a quote <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></article>
+<article class="offering" id="pa"><span class="offering-num">05 / Live</span><div><h2>PA systems</h2><p>PA system operation for events. Equipment can be supplied in Kwekwe and Gweru; travel beyond those areas is possible when travel costs are covered.</p><ul><li>System operation</li><li>Local equipment supply: Kwekwe and Gweru</li><li>Travel arrangements discussed per project</li></ul></div><a class="text-arrow" href="contact.html?interest=PA%20systems">Request a quote <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></article>
+</section>
+<section class="quote-band"><div class="page-shell quote-band-inner"><span>Simple, personal, project by project.</span><h2>No fixed packages.<br><em>A quote that fits.</em></h2><p>Pricing, timelines, payment arrangements and revisions vary by project. Share the details and I’ll prepare a custom quote. Any required transport costs are paid upfront after the quote is accepted. Availability and timing are discussed with each custom quote.</p><a class="button button-light" href="contact.html">Tell me what you need <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></div></section>
+<section class="future-note page-shell"><div class="section-kicker"><span>Next chapter</span><span>Planned expansion</span></div><p>Physical marketing is part of the long-term vision for Schings Digital, but it is not a current service yet.</p></section></main>
+<footer class="site-footer page-shell"><a class="footer-brand" href="index.html">SCHINGS<span>DIGITAL</span></a><p>Independent media brand by Samuel Takudzwa Chingosho.</p><nav aria-label="Footer navigation"><a href="studio.html">Studio</a><a href="services.html">Services</a><a href="work.html">Work</a><a href="contact.html">Contact</a></nav><div class="footer-social"><a href="https://www.instagram.com/schingsdigital" target="_blank" rel="noreferrer">Instagram <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a><a href="https://x.com/schingsdigital" target="_blank" rel="noreferrer">X <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a><a href="https://www.facebook.com/people/Sammychings27-Digital/61591467394198/" target="_blank" rel="noreferrer">Facebook <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></div><span class="footer-year">© <span data-year></span> Schings Digital</span></footer></body></html>
+
+
+
+
+
+
+
+
+
+
+

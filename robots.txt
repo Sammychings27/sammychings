@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sammychings27.xyz/sitemap.xml

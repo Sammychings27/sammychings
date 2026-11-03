@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en-GB"><head><script>
+(() => {
+  const root = document.documentElement;
+  root.classList.add('js');
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  root.classList.add('intro-pending');
+  let finished = false;
+  const finishIntro = () => {
+    if (finished) return;
+    finished = true;
+    root.classList.remove('intro-pending');
+    document.querySelectorAll('body > :not(.site-intro)').forEach(node => { node.inert = false; });
+    document.querySelector('.site-intro')?.remove();
+  };
+  document.addEventListener('DOMContentLoaded', () => {
+    if (root.classList.contains('intro-pending')) {
+      document.querySelectorAll('body > :not(.site-intro)').forEach(node => { node.inert = true; });
+      document.querySelector('.intro-skip')?.focus({ preventScroll: true });
+    }
+  }, { once: true });
+  document.addEventListener('click', event => {
+    if (event.target.closest('.intro-skip')) finishIntro();
+  }, true);
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && root.classList.contains('intro-pending')) finishIntro();
+  });
+  document.addEventListener('animationend', event => {
+    if (event.animationName === 'schings-intro-left') finishIntro();
+  });
+  window.setTimeout(finishIntro, 2200);
+})();
+</script><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f2eee6"><meta name="description" content="Request a Schings Digital quote for photography, flyers, video, social marketing or PA systems. Based in Kwekwe and Kempton Park, serving Zimbabwe and Gauteng."><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Request a Quote for Media Services — Schings Digital"><meta name="twitter:description" content="Request a Schings Digital quote for photography, flyers, video, social marketing or PA systems. Based in Kwekwe and Kempton Park, serving Zimbabwe and Gauteng."><meta name="twitter:image" content="https://sammychings27.xyz/assets/images/portfolio/samuel-portrait.jpg"><meta property="og:url" content="https://sammychings27.xyz/contact.html"><meta property="og:image" content="https://sammychings27.xyz/assets/images/portfolio/samuel-portrait.jpg"><link rel="canonical" href="https://sammychings27.xyz/contact.html"><meta property="og:title" content="Request a Quote for Media Services — Schings Digital"><meta property="og:description" content="Request a Schings Digital quote for photography, flyers, video, social marketing or PA systems. Based in Kwekwe and Kempton Park, serving Zimbabwe and Gauteng."><title>Request a Quote for Media Services — Schings Digital</title><link rel="icon" href="assets/images/mark.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/site.css"><script defer src="assets/js/site.js"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Samuel Takudzwa Chingosho","alternateName":"Sammychings27","jobTitle":"Photographer and Media Creator","url":"https://sammychings27.xyz/","sameAs":["https://www.instagram.com/schingsdigital","https://x.com/schingsdigital","https://www.facebook.com/people/Sammychings27-Digital/61591467394198/"]}</script></head>
+<body><div class="site-intro" role="dialog" aria-modal="true" aria-label="Schings Digital introduction">
+  <div class="intro-panel intro-panel-left" aria-hidden="true"></div>
+  <div class="intro-panel intro-panel-right" aria-hidden="true"></div>
+  <div class="intro-lockup"><span class="intro-symbol" aria-hidden="true">S<span>+</span></span><span class="intro-wordmark">SCHINGS<span>DIGITAL</span></span></div>
+  <span class="intro-divider" aria-hidden="true"></span>
+  <button class="intro-skip" type="button">Skip intro</button>
+</div><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html" aria-label="Schings Digital home"><span class="brand-symbol" aria-hidden="true">S<span>+</span></span><span class="brand-wordmark">SCHINGS<span>DIGITAL</span></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><span>Menu</span><i aria-hidden="true"></i></button><nav class="primary-navigation" id="primary-navigation" aria-label="Primary navigation"><a href="studio.html">Studio</a><a href="services.html">Services</a><a href="work.html">Work</a><a class="nav-cta" href="contact.html" aria-current="page">Request a quote <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></nav></header>
+<main id="main"><section class="inner-hero page-shell contact-intro"><div class="section-kicker"><span>Contact</span><span>Start a conversation</span></div><div class="inner-hero-grid"><h1>Tell me what<br>you want to <em>make.</em></h1><p>Share as much detail as you have. I’ll follow up to understand the brief and prepare a custom quote. No fixed packages or public price list.</p></div></section>
+<section class="contact-layout page-shell"><div class="contact-details"><div class="contact-detail"><span>Email</span><a href="mailto:sammychings27@gmail.com">sammychings27@gmail.com</a></div><div class="contact-detail"><span>Based in</span><p>Kwekwe, Zimbabwe<br>Kempton Park, Gauteng, South Africa</p></div><div class="contact-detail"><span>Travel</span><p>Available farther afield when travel costs are covered.</p></div><div class="contact-detail"><span>Social</span><div class="contact-social"><a href="https://www.instagram.com/schingsdigital" target="_blank" rel="noreferrer">Instagram <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a><a href="https://x.com/schingsdigital" target="_blank" rel="noreferrer">X / @schingsdigital <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a><a href="https://www.facebook.com/people/Sammychings27-Digital/61591467394198/" target="_blank" rel="noreferrer">Facebook / Sammychings27 Digital <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></div></div><p class="contact-note">Turnaround, payment plans and revision rounds vary by project. Any transport cost required for the work is paid upfront once the quote is accepted.</p></div>
+<form class="contact-form" id="project-form"><div class="form-field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div><div class="form-field"><label for="email">Your email</label><input id="email" name="email" type="email" autocomplete="email" required></div><div class="form-field"><label for="interest">What do you need?</label><select id="interest" name="interest" required><option value="">Choose a service</option><option>Photography</option><option>Digital flyer</option><option>Video</option><option>Social marketing</option><option>PA systems</option><option>Something else</option></select></div><div class="form-field"><label for="location">Where will the work happen?</label><input id="location" name="location" autocomplete="address-level2" placeholder="Town or area"></div><div class="form-field"><label for="message">Tell me a little about it</label><textarea id="message" name="message" rows="6" required placeholder="What are you hoping to make, who is it for, and when do you need it?"></textarea></div><button class="button button-dark form-submit" type="submit">Prepare your enquiry <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></button><p class="form-hint">This opens your email app with your message ready to send.</p><p class="form-status" id="form-status" role="status" aria-live="polite"></p></form></section>
+<section class="contact-expectations page-shell"><div class="section-kicker"><span>Useful details</span><span>Before you send</span></div><div><h2>A clear starting point helps.</h2><p>Tell me what you need, where the work will happen, who it is for and any dates you already have in mind. Links, references and existing designs are useful too. I’ll ask follow-up questions if needed and build a custom quote from the brief. You can also start with a social message if that is easier.</p><p>Photography is mainly portrait-focused, with smaller event coverage also available. Flyers are delivered for both digital sharing and print. PA equipment supply is available in Kwekwe and Gweru; for other locations, operation and travel can be discussed. Timelines and revision rounds depend on the project. Sending an enquiry starts a conversation and does not commit you to booking. I’ll clarify the brief and discuss the scope before preparing your quote.</p></div></section><section class="contact-bottom"><div class="page-shell contact-bottom-inner"><p>Prefer to start with a social message?</p><a href="https://www.instagram.com/schingsdigital" target="_blank" rel="noreferrer">Find Schings Digital on Instagram <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></div></section></main>
+<footer class="site-footer page-shell"><a class="footer-brand" href="index.html">SCHINGS<span>DIGITAL</span></a><p>Independent media brand by Samuel Takudzwa Chingosho.</p><nav aria-label="Footer navigation"><a href="studio.html">Studio</a><a href="services.html">Services</a><a href="work.html">Work</a><a href="contact.html">Contact</a></nav><div class="footer-social"><a href="https://www.instagram.com/schingsdigital" target="_blank" rel="noreferrer">Instagram <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a><a href="https://x.com/schingsdigital" target="_blank" rel="noreferrer">X <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a><a href="https://www.facebook.com/people/Sammychings27-Digital/61591467394198/" target="_blank" rel="noreferrer">Facebook <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></div><span class="footer-year">© <span data-year></span> Schings Digital</span></footer></body></html>
+
+
+
+
+
+
+
+
+
+
+
+

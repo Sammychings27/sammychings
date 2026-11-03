@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en-GB"><head><script>
+(() => {
+  const root = document.documentElement;
+  root.classList.add('js');
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  root.classList.add('intro-pending');
+  let finished = false;
+  const finishIntro = () => {
+    if (finished) return;
+    finished = true;
+    root.classList.remove('intro-pending');
+    document.querySelectorAll('body > :not(.site-intro)').forEach(node => { node.inert = false; });
+    document.querySelector('.site-intro')?.remove();
+  };
+  document.addEventListener('DOMContentLoaded', () => {
+    if (root.classList.contains('intro-pending')) {
+      document.querySelectorAll('body > :not(.site-intro)').forEach(node => { node.inert = true; });
+      document.querySelector('.intro-skip')?.focus({ preventScroll: true });
+    }
+  }, { once: true });
+  document.addEventListener('click', event => {
+    if (event.target.closest('.intro-skip')) finishIntro();
+  }, true);
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && root.classList.contains('intro-pending')) finishIntro();
+  });
+  document.addEventListener('animationend', event => {
+    if (event.animationName === 'schings-intro-left') finishIntro();
+  });
+  window.setTimeout(finishIntro, 2200);
+})();
+</script><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f2eee6"><meta name="description" content="Meet Samuel Takudzwa Chingosho, the photographer and media creator behind Schings Digital, based in Kwekwe and Kempton Park. Working in media since 2022."><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Samuel Chingosho — Photographer &amp; Media Creator"><meta name="twitter:description" content="Meet Samuel Takudzwa Chingosho, the photographer and media creator behind Schings Digital, based in Kwekwe and Kempton Park. Working in media since 2022."><meta name="twitter:image" content="https://sammychings27.xyz/assets/images/portfolio/samuel-portrait.jpg"><meta property="og:url" content="https://sammychings27.xyz/studio.html"><meta property="og:image" content="https://sammychings27.xyz/assets/images/portfolio/samuel-portrait.jpg"><link rel="canonical" href="https://sammychings27.xyz/studio.html"><meta property="og:title" content="Samuel Chingosho — Photographer &amp; Media Creator"><meta property="og:description" content="Meet Samuel Takudzwa Chingosho, the photographer and media creator behind Schings Digital, based in Kwekwe and Kempton Park. Working in media since 2022."><title>Samuel Chingosho — Photographer &amp; Media Creator</title><link rel="icon" href="assets/images/mark.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/site.css"><script defer src="assets/js/site.js"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Samuel Takudzwa Chingosho","alternateName":"Sammychings27","jobTitle":"Photographer and Media Creator","url":"https://sammychings27.xyz/","sameAs":["https://www.instagram.com/schingsdigital","https://x.com/schingsdigital","https://www.facebook.com/people/Sammychings27-Digital/61591467394198/"]}</script></head>
+<body><div class="site-intro" role="dialog" aria-modal="true" aria-label="Schings Digital introduction">
+  <div class="intro-panel intro-panel-left" aria-hidden="true"></div>
+  <div class="intro-panel intro-panel-right" aria-hidden="true"></div>
+  <div class="intro-lockup"><span class="intro-symbol" aria-hidden="true">S<span>+</span></span><span class="intro-wordmark">SCHINGS<span>DIGITAL</span></span></div>
+  <span class="intro-divider" aria-hidden="true"></span>
+  <button class="intro-skip" type="button">Skip intro</button>
+</div><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html" aria-label="Schings Digital home"><span class="brand-symbol" aria-hidden="true">S<span>+</span></span><span class="brand-wordmark">SCHINGS<span>DIGITAL</span></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><span>Menu</span><i aria-hidden="true"></i></button><nav class="primary-navigation" id="primary-navigation" aria-label="Primary navigation"><a href="studio.html" aria-current="page">Studio</a><a href="services.html">Services</a><a href="work.html">Work</a><a class="nav-cta" href="contact.html">Request a quote <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></nav></header>
+<main id="main"><section class="inner-hero page-shell"><div class="section-kicker"><span>Studio</span><span>Samuel / Schings Digital</span></div><div class="inner-hero-grid"><h1>Small by choice.<br><em>Personal</em> by nature.</h1><p>Schings Digital is the personal brand of Samuel Takudzwa Chingosho—built around thoughtful media, creative flexibility and a real connection with the people behind each project.</p></div></section>
+<section class="founder-story"><div class="page-shell founder-grid"><figure class="founder-image"><img src="assets/images/portfolio/samuel-camera-portrait.jpg" width="1133" height="1700" alt="Samuel holding a camera" loading="lazy"><figcaption>Behind the camera / Samuel Takudzwa Chingosho</figcaption></figure><div class="founder-copy"><div class="section-kicker"><span>01</span><span>The story</span></div><h2>One name.<br>A few ways to <em>tell a story.</em></h2><p>Schings comes from Sammychings27, Samuel’s childhood nickname and long-time online identity. “Sammychings” grew from his name; 27 is his favourite number.</p><p>He started working in media in 2022. Today, he works solo, with collaborators joining when a project calls for it. Schings Digital is the foundation for a future company—built patiently through good work, partnerships and stronger client relationships.</p><div class="founder-facts"><div><strong>2022</strong><span>Started working in media</span></div><div><strong>01</strong><span>Independent, personal practice</span></div><div><strong>02</strong><span>Kwekwe & Kempton Park bases</span></div></div></div></div></section>
+<section class="studio-values page-shell"><div class="section-kicker"><span>02</span><span>How I work</span></div><div class="values-grid"><h2>Young at heart.<br><em>Serious</em> about the details.</h2><div><p>A fresh, flexible approach, a broad range of media skills and a personal connection from the first conversation to the final delivery.</p><p>Each project starts with a detailed brief. Quotes, timelines and revision rounds are shaped around the work. Feedback is gathered before final delivery, and requested edits are handled as agreed. I work independently, bringing in collaborators when a brief calls for extra hands. That flexible setup keeps each project personal while making room for partnerships.</p></div></div></section>
+<section class="location-band"><div class="page-shell location-inner"><div><span>Zimbabwe</span><strong>Kwekwe</strong><p>Work across the country. PA equipment supply in Kwekwe and Gweru.</p></div><div class="location-divider" aria-hidden="true"></div><div><span>South Africa</span><strong>Kempton Park / Gauteng</strong><p>Work across Gauteng, with Kempton Park as the base. Travel farther when costs are covered.</p></div></div></section>
+<section class="future-section page-shell"><div class="section-kicker"><span>03</span><span>Looking ahead</span></div><div class="future-grid"><h2>Growing with<br>good people.</h2><p>The long-term goal is to register Schings Digital, build a team, invest in better equipment, expand into physical marketing, and form deeper partnerships and client relationships. Physical marketing is a future direction, not a current service.</p></div><a class="text-arrow" href="contact.html">Start a conversation <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></section></main>
+<footer class="site-footer page-shell"><a class="footer-brand" href="index.html">SCHINGS<span>DIGITAL</span></a><p>Independent media brand by Samuel Takudzwa Chingosho.</p><nav aria-label="Footer navigation"><a href="studio.html">Studio</a><a href="services.html">Services</a><a href="work.html">Work</a><a href="contact.html">Contact</a></nav><div class="footer-social"><a href="https://www.instagram.com/schingsdigital" target="_blank" rel="noreferrer">Instagram <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a><a href="https://x.com/schingsdigital" target="_blank" rel="noreferrer">X <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a><a href="https://www.facebook.com/people/Sammychings27-Digital/61591467394198/" target="_blank" rel="noreferrer">Facebook <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></div><span class="footer-year">© <span data-year></span> Schings Digital</span></footer></body></html>
+
+
+
+
+
+
+
+
+
+
+

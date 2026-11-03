@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en-GB">
+<head><script>
+(() => {
+  const root = document.documentElement;
+  root.classList.add('js');
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  root.classList.add('intro-pending');
+  let finished = false;
+  const finishIntro = () => {
+    if (finished) return;
+    finished = true;
+    root.classList.remove('intro-pending');
+    document.querySelectorAll('body > :not(.site-intro)').forEach(node => { node.inert = false; });
+    document.querySelector('.site-intro')?.remove();
+  };
+  document.addEventListener('DOMContentLoaded', () => {
+    if (root.classList.contains('intro-pending')) {
+      document.querySelectorAll('body > :not(.site-intro)').forEach(node => { node.inert = true; });
+      document.querySelector('.intro-skip')?.focus({ preventScroll: true });
+    }
+  }, { once: true });
+  document.addEventListener('click', event => {
+    if (event.target.closest('.intro-skip')) finishIntro();
+  }, true);
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && root.classList.contains('intro-pending')) finishIntro();
+  });
+  document.addEventListener('animationend', event => {
+    if (event.animationName === 'schings-intro-left') finishIntro();
+  });
+  window.setTimeout(finishIntro, 2200);
+})();
+</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2eee6">
+  <meta name="description" content="Portrait photography, digital flyers, video, social marketing and PA system work by Samuel Takudzwa Chingosho in Zimbabwe and Gauteng.">
+  <meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Schings Digital — Photography &amp; Media in Zimbabwe &amp; Gauteng"><meta name="twitter:description" content="Portrait photography, digital flyers, video, social marketing and PA system work by Samuel Takudzwa Chingosho in Zimbabwe and Gauteng."><meta name="twitter:image" content="https://sammychings27.xyz/assets/images/portfolio/samuel-portrait.jpg">
+  <meta property="og:url" content="https://sammychings27.xyz/">
+  <meta property="og:image:alt" content="Samuel Takudzwa Chingosho in a blue suit outdoors">
+  <link rel="canonical" href="https://sammychings27.xyz/">
+  <meta property="og:title" content="Schings Digital — Photography &amp; Media in Zimbabwe &amp; Gauteng">
+  <meta property="og:description" content="Portrait photography, digital flyers, video, social marketing and PA system work by Samuel Takudzwa Chingosho in Zimbabwe and Gauteng.">
+  <meta property="og:image" content="https://sammychings27.xyz/assets/images/portfolio/samuel-portrait.jpg">
+  <title>Schings Digital — Photography &amp; Media in Zimbabwe &amp; Gauteng</title>
+  <link rel="icon" href="assets/images/mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script defer src="assets/js/site.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Samuel Takudzwa Chingosho","alternateName":"Sammychings27","jobTitle":"Photographer and Media Creator","url":"https://sammychings27.xyz/","sameAs":["https://www.instagram.com/schingsdigital","https://x.com/schingsdigital","https://www.facebook.com/people/Sammychings27-Digital/61591467394198/"]}</script>
+</head>
+<body><div class="site-intro" role="dialog" aria-modal="true" aria-label="Schings Digital introduction">
+  <div class="intro-panel intro-panel-left" aria-hidden="true"></div>
+  <div class="intro-panel intro-panel-right" aria-hidden="true"></div>
+  <div class="intro-lockup"><span class="intro-symbol" aria-hidden="true">S<span>+</span></span><span class="intro-wordmark">SCHINGS<span>DIGITAL</span></span></div>
+  <span class="intro-divider" aria-hidden="true"></span>
+  <button class="intro-skip" type="button">Skip intro</button>
+</div>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Schings Digital home"><span class="brand-symbol" aria-hidden="true">S<span>+</span></span><span class="brand-wordmark">SCHINGS<span>DIGITAL</span></span></a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><span>Menu</span><i aria-hidden="true"></i></button>
+  <nav class="primary-navigation" id="primary-navigation" aria-label="Primary navigation"><a href="studio.html">Studio</a><a href="services.html">Services</a><a href="work.html">Work</a><a class="nav-cta" href="contact.html">Request a quote <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></nav>
+</header>
+<main id="main">
+  <section class="home-hero page-shell" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="overline">Samuel Takudzwa Chingosho <span>·</span> Zimbabwe & South Africa</p>
+      <h1 id="hero-title">Made to<br>be <em>seen.</em></h1>
+      <p class="hero-summary">Photography, digital flyers, video and social marketing—made with a personal touch. Every project starts with your brief and a custom quote.</p>
+      <div class="hero-actions"><a class="button button-dark" href="contact.html">Request a quote <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a><a class="quiet-link" href="work.html">Explore selected work <svg class="icon-arrow icon-down" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5"/></svg></a></div>
+      <div class="hero-note"><span class="note-rule"></span><span>Independent media brand<br>Working since 2022</span></div>
+    </div>
+    <figure class="hero-portrait"><img src="assets/images/portfolio/samuel-portrait.jpg" width="1133" height="1700" alt="Samuel Takudzwa Chingosho in a blue suit, photographed outdoors" fetchpriority="high"><figcaption><span>Samuel Takudzwa Chingosho</span><span>Photographer & media creator</span></figcaption><span class="image-index" aria-hidden="true">01 / 04</span></figure>
+    <span class="hero-side-note" aria-hidden="true">Personal stories. Strong images. Clear ideas.</span>
+  </section>
+
+  <section class="service-intro page-shell" aria-labelledby="service-intro-title"><div class="section-kicker"><span>01</span><span>What I do</span></div><div class="service-intro-copy"><h2 id="service-intro-title">A small creative practice with a wide lens.</h2><p>From a portrait session to the sound and visuals of an event, Schings Digital helps people and businesses show up with confidence.</p></div><a class="text-arrow" href="services.html">See all services <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></section>
+  <section class="service-list page-shell" aria-label="Current services"><a href="services.html#photography"><span class="service-count">01</span><h3>Photography</h3><p>Portraits and small events</p><span class="row-arrow" aria-hidden="true">↗</span></a><a href="services.html#flyers"><span class="service-count">02</span><h3>Digital flyers</h3><p>Social-ready and print-ready design</p><span class="row-arrow" aria-hidden="true">↗</span></a><a href="services.html#video"><span class="service-count">03</span><h3>Video</h3><p>Filming and editing for the moments that move</p><span class="row-arrow" aria-hidden="true">↗</span></a><a href="services.html#social"><span class="service-count">04</span><h3>Social marketing</h3><p>Content, account support and paid ads</p><span class="row-arrow" aria-hidden="true">↗</span></a><a href="services.html#pa"><span class="service-count">05</span><h3>PA systems</h3><p>Operation and local equipment supply</p><span class="row-arrow" aria-hidden="true">↗</span></a></section>
+
+  <section class="featured-work" aria-labelledby="featured-title"><div class="page-shell featured-head"><div><div class="section-kicker section-kicker-light"><span>02</span><span>Selected work</span></div><h2 id="featured-title">A few things<br>made with care.</h2></div><a class="text-arrow text-arrow-light" href="work.html">View the work <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></div><p class="featured-intro">Explore portrait photography, school media support and campaign designs for businesses. Every brief is different; the work spans photography, flyer design, video and social channels.</p><div class="featured-grid page-shell"><a class="featured-image featured-image-main" href="work.html#portraits"><img src="assets/images/portfolio/family-portrait.jpg" width="1133" height="1700" alt="Portrait of a woman outdoors in a blue dress" loading="lazy"><span>Portraits / 01</span></a><a class="featured-image featured-image-side" href="work.html#lingfield"><img src="assets/images/portfolio/lingfield-mothers-day.jpg" width="1086" height="1448" alt="Lingfield Advent Schools Mother’s Day digital poster designed by Schings Digital" loading="lazy"><span>Lingfield Advent Schools / 02</span></a><a class="featured-image featured-image-small" href="work.html#kstech"><img src="assets/images/portfolio/kstech-logistics-overview.jpg" width="720" height="1080" alt="KS Tech Logistix service overview flyer designed by Schings Digital" loading="lazy"><span>KS Tech Logistix / 03</span></a></div></section>
+
+  <section class="home-story page-shell"><div class="section-kicker"><span>Behind the work</span><span>About Schings Digital</span></div><div class="home-story-grid"><h2>One person.<br>A <em>personal</em> approach.</h2><div><p>Schings Digital is Samuel Takudzwa Chingosho’s personal media brand. He works solo and brings in collaborators when a project needs them, keeping the relationship direct and the process flexible.</p><p>Based in Kwekwe and Kempton Park, Samuel works across Zimbabwe and Gauteng, and can travel farther when expenses are covered. Flyer files can be prepared for both social sharing and print.</p><a class="text-arrow" href="studio.html">Meet Samuel <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></div></div></section><section class="testimonial-section page-shell" aria-labelledby="testimonial-title"><div class="section-kicker"><span>03</span><span>Kind words</span></div><div class="testimonial-wrap"><h2 id="testimonial-title">Good work<br>travels by word<br>of mouth.</h2><blockquote><p>“Schings—a brand that has never failed me.”</p><footer><strong>Answer Matibini</strong><span>CEO, Lion Gold Construction & Hardware</span></footer></blockquote><a class="text-arrow" href="work.html#words">More client feedback <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></div></section>
+
+  <section class="home-contact"><div class="page-shell home-contact-inner"><p>Have an idea in mind?</p><h2>Let’s make it<br><em>visible.</em></h2><a class="button button-light" href="contact.html">Tell me about it <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a><span class="contact-stamp" aria-hidden="true">SCHINGS<br>DIGITAL<br>EST. 2022</span></div></section>
+</main>
+<footer class="site-footer page-shell"><a class="footer-brand" href="index.html">SCHINGS<span>DIGITAL</span></a><p>Independent media brand by Samuel Takudzwa Chingosho.</p><nav aria-label="Footer navigation"><a href="studio.html">Studio</a><a href="services.html">Services</a><a href="work.html">Work</a><a href="contact.html">Contact</a></nav><div class="footer-social"><a href="https://www.instagram.com/schingsdigital" target="_blank" rel="noreferrer">Instagram <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a><a href="https://x.com/schingsdigital" target="_blank" rel="noreferrer">X <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a><a href="https://www.facebook.com/people/Sammychings27-Digital/61591467394198/" target="_blank" rel="noreferrer">Facebook <svg class="icon-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a></div><span class="footer-year">© <span data-year></span> Schings Digital</span></footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
